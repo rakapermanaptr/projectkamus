@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin"
     tools:context=".activity.DetailActivity">
 
     <TextView
@@ -11,14 +13,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvDetailWord"
         android:textSize="20sp"
-        tools:text="Bagaimana"
+        tools:text="@string/word"
         android:textStyle="bold"
         />
 
     <TextView
-        tools:text= "hallo bagaimana semuanya baik baik saja?"
+        tools:text= "@string/translate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:id="@+id/tvDetailTranslate"
         />
 

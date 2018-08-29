@@ -47,10 +47,9 @@ public class KamusAdapter extends RecyclerView.Adapter<KamusAdapter.ViewHolder> 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KamusModel model = new KamusModel();
-                model.setWord(listKamus.get(position).getWord());
-                model.setTranslate(listKamus.get(position).getTranslate());
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra(DetailActivity.EXTRA_WORD, listKamus.get(position).getWord());
+                intent.putExtra(DetailActivity.EXTRA_TRANSLATE, listKamus.get(position).getTranslate());
                 context.startActivity(intent);
             }
         });

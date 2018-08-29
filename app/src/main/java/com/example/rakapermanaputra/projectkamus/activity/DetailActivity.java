@@ -11,7 +11,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DetailActivity extends AppCompatActivity {
-    public static String EXTRA_DATA = "extra_data";
+    public static String EXTRA_WORD = "extra_word";
+    public static String EXTRA_TRANSLATE = "translate";
     @BindView(R.id.tvDetailWord)
     TextView tvWord;
     @BindView(R.id.tvDetailTranslate)
@@ -24,21 +25,14 @@ public class DetailActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        getIncomingIntent();
-    }
-
-    private void getIncomingIntent() {
-        KamusModel kamusModel = getIntent().getParcelableExtra(EXTRA_DATA);
-        String world = kamusModel.getWord();
-        String translate = kamusModel.getTranslate();
-
-        setData(world,translate);
+        setDataIntent();
 
     }
 
-    private void setData(String word, String translate) {
+    private void setDataIntent() {
+        String word = getIntent().getStringExtra(EXTRA_WORD);
         tvWord.setText(word);
+        String translate = getIntent().getStringExtra(EXTRA_TRANSLATE);
         tvTranslate.setText(translate);
-
     }
 }
